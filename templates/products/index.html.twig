@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>SS1 Project - Vu Manh Tien</title>
+		<link rel="stylesheet" href="{{asset('css/styles.css')}}">
+		<script src="{{asset('js/scripts.js')}}" defer></script>
+		<div>
+			{% block header %}
+				<div class="container">
+					<div class="navbar">
+            			<a href="{{path('app_products')}}"><img src="img/logo1.png" class="logo"></a>
+						<nav>
+							<ul id="menuList">
+								<li>
+									<div class="game-controller">
+										<a href="{{path('products_list')}}">Game Controllers</a>
+									</div>
+								</li>
+								<li>
+									<a href="{{path('vr_list')}}">VR Accessories</a>
+								</li>
+								<li>
+									<a href="{{path('feedback')}}">Feedback</a>
+								</li>
+								<li>
+									{% if not app.user %}
+                    					<button class="login-btn" onclick="location.href = '{{path('app_login')}}';">Login</button>
+			            			{% else %}
+									  <button class="login-btn" onclick="location.href = '{{path('app_logout')}}';">Logout</button>                      
+			            			{% endif %}
+								</li>
+							</ul>
+						</nav>
+						<img src="img/menu.png" class="menu-icon" onclick="togglemenu()">
+					</div>
+				
+			{% endblock %}
+
+			
+				{% block container %}
+
+
+					<div class="row">
+						<div class="col-1">
+							<h2>PS5
+								<br>DualSense Wireless Controller-White</h2>
+							<h3>Wireless Controller for PlashSpeed 5</h3>
+							<p>(Compatible/Generic/Ultimate Controller for PlashSpeed 5)</p>
+							<h4>$79.55</h4>
+							<button type="button" class="scr1-btn">Buy Now</button>
+						</div>
+						<div class="col-2">
+							<img src="img/controler.png" class="controller">
+							<div class="color-box"></div>
+							<div class="add-btn">
+								<img src="img/add2.png">
+								<p>
+									<small>Add to Cart</small>
+								</p>
+							</div>
+						</div>
+					</div>
+				{% endblock %}
+			</div>
+
+			{% block footer %}
+				<div class="social-links">
+					<img src="img/facebook.png">
+					<img src="img/instagram.png">
+					<img src="img/twitter.png">
+				</div>
+			{% endblock %}
+
+			{# hidden login #}
+			
+									     
+		</body>
+	</head>
+</html>

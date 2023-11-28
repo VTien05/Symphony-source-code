@@ -1,0 +1,50 @@
+{% extends 'products/index.html.twig' %}
+
+{% block container %}
+    <div id="feedback">
+        <div class="feedback">
+                <div class="text">Feedback</div>
+                {{ form_start(form) }}
+                    <div class="form-row">
+                        <div class="input-data">
+                            {{ form_widget(form.FirstName) }}
+                            <div class="underline"></div>
+                            <label for="">First Name</label>
+                        </div>
+                        <div class="input-data">
+                            {{ form_widget(form.LastName) }}
+                            <div class="underline"></div>
+                            <label for="">Last Name</label>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="input-data">
+                            {{ form_widget(form.Email) }}
+                            <div class="underline"></div>
+                            <label for="">Email Address</label>
+                        </div>
+                        <div class="input-data">
+                            {{ form_widget(form.ProductName) }}
+                            <div class="underline"></div>
+                            <label for="">Product Name</label>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="input-data textarea">
+                            {{ form_widget(form.Message, { 'attr' : { 'rows':'8', 'cols':'80'}}) }}
+                            <br />
+                            <div class="underline"></div>
+                            <label for="">Write your message</label>
+                            <br />
+                            <div class="form-row submit-btn">
+                                <div class="input-data">
+                                <div class="inner"></div>
+                                {{ form_row(form.post) }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+			    {{ form_end(form) }}
+            </div>
+    </div>
+{% endblock %}
